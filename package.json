@@ -1,0 +1,53 @@
+{
+  "name": "@sa-mp/crashdetect",
+  "version": "1.0.0",
+  "description": "CrashDetect for NodeSamp.",
+  "keywords": [
+    "nodesamp",
+    "sa-mp",
+    "samp",
+    "plugin",
+    "crashdetect"
+  ],
+  "repository": "github:dev2alert/node-samp-crashdetect",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "dev2alert",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "scripts": {
+    "compile": "tsc",
+    "dev": "cross-env NODE_ENV=development tsc-watch",
+    "postinstall": "node ./dist/install.js"
+  },
+  "devDependencies": {
+    "@types/download": "^8.0.1",
+    "@types/node": "^16.4.13",
+    "cross-env": "^7.0.3",
+    "tsc-watch": "^4.6.0",
+    "@sa-mp/core": "1.x"
+  },
+  "dependencies": {
+    "download": "^8.0.0",
+    "tsee": "^1.3.2",
+    "@sa-mp/amx": "1.x"
+  },
+  "peerDependencies": {
+    "@sa-mp/core": "1.x"
+  },
+  "config": {
+    "samp": {
+      "plugins": [
+        {
+          "platform": "win32",
+          "path": "./crashdetect.dll"
+        },
+        {
+          "platform": "linux",
+          "path": "./crashdetect.so"
+        }
+      ]
+    }
+  }
+}
